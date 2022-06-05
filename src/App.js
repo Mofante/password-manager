@@ -2,6 +2,7 @@ import { useState } from "react";
 import NewPasswordScreen from "./components/NewPasswordScreen";
 import Password from "./components/Password";
 import "./style.css";
+import generatePassword from "./utils/generatePassword";
 
 function App() {
 	const [passwords, setPasswords] = useState([]);
@@ -11,8 +12,8 @@ function App() {
 			return [
 				...prevPasswords,
 				{
-					name: "xD",
-					password: "",
+					name: "",
+					password: generatePassword(),
 				},
 			];
 		});
