@@ -12,7 +12,7 @@ function App() {
 			return [
 				...prevPasswords,
 				{
-					name: "",
+					name: "jakieshaslo",
 					password: generatePassword(),
 				},
 			];
@@ -20,7 +20,11 @@ function App() {
 	}
 
 	const passwordElements = passwords.map((password) => (
-		<Password name={password.name} />
+		<Password
+			key={password.password}
+			password={password.password}
+			name={password.name}
+		/>
 	));
 
 	return (

@@ -39,19 +39,7 @@ body {
     color: #FCFDFF;
     background-color: #0C8896;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
-}
-
-.password {
-    margin: 10px;
-    width: 74%;
-    height: 60px;
-    max-width: 500px;
-    background-color: #FCFDFF;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.03);
-    border-radius: 10rem;
-    text-align: center;
-    line-height: 60px;
-    font-size: 22px;
+    user-select: none;
 }
 
 .new-password {
@@ -65,4 +53,35 @@ body {
     transform: translate(-50%, -50%);
     display: flex;
     background-color: #FCFDFF;
+}
+
+.accordion {
+    border-radius: 10rem;
+    text-align: center;
+    line-height: 60px;
+    font-size: 22px;
+    margin: 0px;
+    width: 74vw;
+    height: 60px;
+    max-width: 500px;
+    background-color: #FCFDFF;
+    border-radius: 10rem 10rem;
+    cursor: pointer;   
+    user-select: none;
+}
+
+.accordion-content {
+    background-color: #FCFDFF;
+    width: 74vw;
+    height: 60px;
+    max-width: 500px;
+    border-radius: 0 0 10rem 10rem; 
+    text-align: center;
+    line-height: 60px;
+    font-size: 20px;
+    color: #123E89;
+}
+
+.accordion-container {
+    margin: 10px;
 }
