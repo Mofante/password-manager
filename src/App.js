@@ -1,7 +1,17 @@
-import logo from "./logo.svg";
+import { useState } from "react";
+import Password from "./components/Password";
+import "./style.css";
 
 function App() {
-	return <div className="App"></div>;
+	const [passwords, setPasswords] = useState([]);
+
+	return (
+		<div className="App">
+			<h1 className="title">Your passwords</h1>
+			<Password />
+			<button>+</button>
+		</div>
+	);
 }
 
 export default App;
