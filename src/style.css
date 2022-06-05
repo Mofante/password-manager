@@ -42,6 +42,7 @@ body {
 }
 
 .password {
+    margin: 10px;
     width: 74%;
     height: 60px;
     max-width: 500px;

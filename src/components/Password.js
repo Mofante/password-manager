@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function Password() {
-	return <div className="password">Password</div>;
+export default function Password(props) {
+	return <div className="password">{props.name}</div>;
 }
