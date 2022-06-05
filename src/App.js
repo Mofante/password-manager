@@ -1,4 +1,5 @@
 import { useState } from "react";
+import NewPasswordScreen from "./components/NewPasswordScreen";
 import Password from "./components/Password";
 import "./style.css";
 
@@ -7,9 +8,10 @@ function App() {
 
 	return (
 		<div className="App">
-			<h1 className="title">Your passwords</h1>
+			<h1 className="title">Your Passwords</h1>
 			<Password />
-			<button>+</button>
+			<button className="new-password-button">+</button>
+			{/* <NewPasswordScreen /> */}
 		</div>
 	);
 }

@@ -1,5 +1,6 @@
 import React from "react";
+import "./../style.css";
 
 export default function NewPasswordScreen() {
-	return <div>NewPasswordScreen</div>;
+	return <div className="new-password">NewPasswordScreen</div>;
 }
