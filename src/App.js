@@ -6,6 +6,7 @@ import generatePassword from "./utils/generatePassword";
 
 function App() {
 	const [passwords, setPasswords] = useState([]);
+	const [creatingNewPassword, setCreatingNewPassword] = useState(false);
 
 	function addPassword() {
 		setPasswords((prevPasswords) => {
@@ -38,10 +39,23 @@ function App() {
 		<div className="App">
 			<h1 className="title">Your Passwords</h1>
 			{passwords.length > 0 && passwordElements}
-			<button className="new-password-button" onClick={addPassword}>
+			<button
+				className="new-password-button"
+				onClick={() => setCreatingNewPassword((prevState) => !prevState)}
+			>
 				+
 			</button>
-			{/* <NewPasswordScreen /> */}
+			{creatingNewPassword && (
+				<div
+					className="blur"
+					onClick={(event) => {
+						event.target.className === "blur" &&
+							setCreatingNewPassword((prevState) => !prevState);
+					}}
+				>
+					<NewPasswordScreen generatePassword={generatePassword} />
+				</div>
+			)}
 		</div>
 	);
 }
