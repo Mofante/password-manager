@@ -8,13 +8,13 @@ function App() {
 	const [passwords, setPasswords] = useState([]);
 	const [creatingNewPassword, setCreatingNewPassword] = useState(false);
 
-	function addPassword() {
+	function addPassword(newPassword, label) {
 		setPasswords((prevPasswords) => {
 			return [
 				...prevPasswords,
 				{
-					name: "jakieshaslo",
-					password: generatePassword(),
+					name: label,
+					password: newPassword,
 				},
 			];
 		});
@@ -53,7 +53,13 @@ function App() {
 							setCreatingNewPassword((prevState) => !prevState);
 					}}
 				>
-					<NewPasswordScreen generatePassword={generatePassword} />
+					<NewPasswordScreen
+						addPassword={addPassword}
+						newPassword={generatePassword()}
+						closeWindow={() =>
+							setCreatingNewPassword((prevState) => !prevState)
+						}
+					/>
 				</div>
 			)}
 		</div>

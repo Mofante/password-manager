@@ -1,27 +1,49 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./../style.css";
 import { FiCopy } from "react-icons/fi";
 
 export default function NewPasswordScreen(props) {
-	const newPassword = props.generatePassword();
+	const [newLabel, setNewLabel] = useState("");
+
+	function handleChange(e) {
+		setNewLabel(e.target.value);
+	}
 
 	return (
 		<div className="new-password">
-			<form className="form-container">
+			<form
+				onSubmit={(event) => event.preventDefault()}
+				className="form-container"
+			>
 				<label className="label">Label:</label>
-				<input className="input-field" type="text" />
+				<input
+					autoFocus
+					onChange={handleChange}
+					value={newLabel}
+					className="input-field"
+					type="text"
+				/>
 				<div className="label">Password:</div>
 				<div>
 					<div className="new-password-text">
-						{newPassword}
+						{props.newPassword}
 						<FiCopy
 							onClick={() => {
-								navigator.clipboard.writeText(newPassword);
+								navigator.clipboard.writeText(props.newPassword);
 							}}
 							className="new-password-icon"
 						/>
 					</div>
 				</div>
+				<button
+					className="add-button"
+					onClick={() => {
+						props.addPassword(props.newPassword, newLabel);
+						props.closeWindow();
+					}}
+				>
+					Add
+				</button>
 			</form>
 		</div>
 	);

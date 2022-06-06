@@ -42,12 +42,26 @@ body {
     user-select: none;
 }
 
+.add-button {
+    color: #FCFDFF;
+    background-color: #0C8896;
+    user-select: none;
+    border: none;
+    width: 100px;
+    height: 30px;
+    align-self: center;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 17px;
+}
+
 .new-password {
     position: absolute;
     width: 74vw;
     max-width: 400px;
-    height: 32vw;
-    max-height: 200px;
+    height: 40vw;
+    max-height: 250px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -58,6 +72,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
 .label {
@@ -169,4 +184,5 @@ body {
     backdrop-filter: blur(8px);
     width: 100vw;
     height: 100vh;
+    z-index: 3;
 }
