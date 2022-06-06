@@ -38,7 +38,9 @@ function App() {
 	return (
 		<div className="App">
 			<h1 className="title">Your Passwords</h1>
-			{passwords.length > 0 && passwordElements}
+			<div className="scroll-container">
+				{passwords.length > 0 && passwordElements}
+			</div>
 			<button
 				className="new-password-button"
 				onClick={() => setCreatingNewPassword((prevState) => !prevState)}
