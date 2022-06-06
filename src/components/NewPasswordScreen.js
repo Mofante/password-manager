@@ -37,7 +37,8 @@ export default function NewPasswordScreen(props) {
 				</div>
 				<button
 					className="add-button"
-					onClick={() => {
+					onClick={(event) => {
+						event.preventDefault();
 						props.addPassword(props.newPassword, newLabel);
 						props.closeWindow();
 					}}
