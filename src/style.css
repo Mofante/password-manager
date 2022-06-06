@@ -56,7 +56,6 @@ body {
 }
 
 .accordion {
-    border-radius: 10rem;
     text-align: center;
     line-height: 60px;
     font-size: 22px;
@@ -65,17 +64,20 @@ body {
     height: 60px;
     max-width: 500px;
     background-color: #FCFDFF;
-    border-radius: 10rem 10rem;
+    border-radius: 1rem 1rem;
     cursor: pointer;   
     user-select: none;
 }
 
 .accordion-content {
+    position: relative;
+    display: flex;  
+    align-items: center;
     background-color: #FCFDFF;
     width: 74vw;
     height: 60px;
     max-width: 500px;
-    border-radius: 0 0 10rem 10rem; 
+    border-radius: 0 0 1rem 1rem; 
     text-align: center;
     line-height: 60px;
     font-size: 20px;
@@ -84,4 +86,17 @@ body {
 
 .accordion-container {
     margin: 10px;
+}
+
+.trash-icon {
+    position: absolute;
+    right: 20px;
+}
+
+.password-text {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
 }

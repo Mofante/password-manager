@@ -19,8 +19,15 @@ function App() {
 		});
 	}
 
+	function removePassword(password) {
+		setPasswords((prevPasswords) => {
+			return prevPasswords.filter((x) => x.password !== password);
+		});
+	}
+
 	const passwordElements = passwords.map((password) => (
 		<Password
+			removePassword={() => removePassword(password.password)}
 			key={password.password}
 			password={password.password}
 			name={password.name}
