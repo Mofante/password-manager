@@ -82,6 +82,7 @@ body {
     line-height: 60px;
     font-size: 20px;
     color: #123E89;
+    user-select: none;
 }
 
 .accordion-container {
@@ -91,6 +92,15 @@ body {
 .trash-icon {
     position: absolute;
     right: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.copy-icon {
+    position: absolute;
+    left: 20px;
+    z-index: 2;
+    cursor: pointer;
 }
 
 .password-text {

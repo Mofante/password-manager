@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
+import { FiCopy } from "react-icons/fi";
 import "./../style.css";
 
 export default function Password(props) {
@@ -18,6 +19,12 @@ export default function Password(props) {
 			</div>
 			{isActive && (
 				<div className="accordion-content">
+					<FiCopy
+						onClick={() => {
+							navigator.clipboard.writeText(props.password);
+						}}
+						className="copy-icon"
+					/>
 					<div className="password-text">{props.password}</div>
 					<FaRegTrashAlt
 						onClick={props.removePassword}
