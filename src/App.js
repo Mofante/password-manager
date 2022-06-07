@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NewPasswordScreen from "./components/NewPasswordScreen";
 import Password from "./components/Password";
 import "./style.css";
 import generatePassword from "./utils/generatePassword";
 
 function App() {
-	const [passwords, setPasswords] = useState([]);
+	const [passwords, setPasswords] = useState(() => {
+		const saved = localStorage.getItem("passwords");
+		const initValue = JSON.parse(saved);
+		return initValue || [];
+	});
 	const [creatingNewPassword, setCreatingNewPassword] = useState(false);
 
 	function addPassword(newPassword, label) {
@@ -19,6 +23,10 @@ function App() {
 			];
 		});
 	}
+
+	useEffect(() => {
+		localStorage.setItem("passwords", JSON.stringify(passwords));
+	}, [passwords]);
 
 	function removePassword(password) {
 		setPasswords((prevPasswords) => {
