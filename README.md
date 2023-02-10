@@ -1,1 +1,1 @@
-# Simple web password menager app
+# Simple web password manager app
